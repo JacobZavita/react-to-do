@@ -6,7 +6,13 @@ const List = props => {
     <div className="todo-container">
       <ul className="todo-list">
         {props.todos.map(todo => (
-          <ToDoItem key={todo.id} text={todo.text} />
+          <ToDoItem
+            key={todo.id}
+            text={todo.text}
+            todo={todo}
+            todos={props.todos}
+            setTodos={props.setTodos}
+          />
         ))}
       </ul>
     </div>

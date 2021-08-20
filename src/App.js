@@ -18,7 +18,7 @@ const App = () => {
         inputText={inputText}
         setInputText={setInputText}
       />
-      <List todos={todos}/>
+      <List todos={todos} setTodos={setTodos} />
     </div>
   )
 }
