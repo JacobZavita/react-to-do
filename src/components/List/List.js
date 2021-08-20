@@ -5,7 +5,7 @@ const List = props => {
   return(
     <div className="todo-container">
       <ul className="todo-list">
-        {props.todos.map(todo => (
+        {props.filteredTodos.map(todo => (
           <ToDoItem
             key={todo.id}
             text={todo.text}
