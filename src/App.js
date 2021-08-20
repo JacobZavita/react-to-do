@@ -1,11 +1,16 @@
-import './App.css';
+import React from 'react'
+import './App.css'
+import Form from './components/Form'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <header>
+        <h1>JZ's To-Do List</h1>
+      </header>
+      <Form />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
