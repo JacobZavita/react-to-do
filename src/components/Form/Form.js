@@ -1,10 +1,31 @@
 import React from 'react'
 
-const Form = () => {
+const Form = props => {
+  const handleInputText = ({ target }) => {
+    props.setInputText(target.value)
+  }
+  const handleSubmitTodo = event => {
+    event.preventDefault()
+    props.setTodos([
+      ...props.todos,
+      { text: props.inputText, completed: false, id: Math.floor(Math.random() * 1000) }])
+    props.setInputText('')
+  }
+  // come back and add uid package to generate actual uid on final version instead of the Math.random
+
   return(
     <form>
-      <input type="text" className="todo-input" />
-      <button className="todo-button" type="submit">
+      <input
+        value={props.inputText}
+        type="text"
+        className="todo-input"
+        onChange={handleInputText}
+      />
+      <button
+        className="todo-button"
+        type="submit"
+        onClick={handleSubmitTodo}
+      >
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
