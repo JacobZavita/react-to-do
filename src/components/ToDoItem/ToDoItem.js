@@ -1,6 +1,23 @@
 import React from 'react'
+import { Button, ButtonGroup } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
+
 
 const ToDoItem = props => {
+
+  const classes = useStyles();
+
   const handleDelete = () => {
     props.setTodos(props.todos.filter(el => el.id !== props.todo.id))
   }

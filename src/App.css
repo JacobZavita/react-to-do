@@ -57,15 +57,43 @@ form button:hover {
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.todo-input {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.todo-button {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .filter-todo {
   padding: 1rem;
 }
 .todo li {
   flex: 1;
+  /* border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px; */
 }
 
-.trash-btn,
+.trash-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .complete-btn {
   background: #ff6f47;
   color: white;
@@ -113,6 +141,11 @@ select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 select {
   color: #ff6f47;
@@ -131,9 +164,3 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
-}
-*/
