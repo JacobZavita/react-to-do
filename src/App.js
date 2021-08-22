@@ -60,7 +60,11 @@ const App = () => {
         setInputText={setInputText}
         setStatus={setStatus}
       />
-      <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos}/>
+      <List
+        todos={todos}
+        setTodos={setTodos}
+        filteredTodos={filteredTodos}
+      />
     </div>
   )
 }

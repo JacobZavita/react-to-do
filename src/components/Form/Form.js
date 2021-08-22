@@ -16,7 +16,6 @@ const Form = props => {
   // come back and add uid package to generate actual uid on final version instead of the Math.random
 
   const handleStatus = ({ target }) => {
-    console.log(target.value)
     props.setStatus(target.value)
   }
 
