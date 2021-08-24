@@ -8,7 +8,6 @@ const List = props => {
 
   const handleOnDragEnd = result => {
     const { destination, source } = result
-    // console.log(result, source, destination, props.todos)
     // don't do anything if there's no change
     if (!destination || ! source) {
       return
@@ -31,7 +30,6 @@ const List = props => {
     }
     
     let reorderedList = props.filteredTodos.map((todo) => {
-      // console.log(todo)
       if (todo.id === result.draggableId) {
         props.setTodos([...props.todos, todo.position = destination.index])
         console.log("condition 1", todo)

@@ -10,9 +10,7 @@ const Form = props => {
     event.preventDefault()
     props.setTodos([
       ...props.todos,
-      // { text: props.inputText, completed: false, id: Math.floor(Math.random() * 1000) }
       { text: props.inputText, completed: false, id: uuidv4(), position: props.todos.length+1 }
-      // this may not actually work since if one is deleted and another is created, there are two with the same position
     ])
     props.setInputText('')
     console.log(props.todos)
