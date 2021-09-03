@@ -1,6 +1,27 @@
 import { v4 as uuidv4 } from 'uuid'
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: "25vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  inputText: {
+    borderTopLeftRadius: '10px',
+    borderBottomLeftRadius: '10px',
+    padding: '0.5rem',
+    fontSize: '2rem',
+    border: 'none',
+    background: 'white'
+}
+ 
+
+}))
 
 const Form = props => {
+  const classes = useStyles()
 
   const handleInputText = ({ target }) => {
     props.setInputText(target.value)
@@ -21,11 +42,11 @@ const Form = props => {
   }
 
   return(
-    <form>
+    <form className={classes.root}>
       <input
         value={props.inputText}
         type="text"
-        className="todo-input"
+        className={classes.inputText}
         onChange={handleInputText}
       />
       <button

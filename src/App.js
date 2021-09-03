@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import Form from './components/Form'
 import List from './components/List'
+import MiniDrawer from './components/Menu'
 
 const App = () => {
 
@@ -48,9 +49,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
-        <h1>JZ's To-Do List</h1>
-      </header>
+
+      <MiniDrawer />
       <Form
         todos={todos}
         setTodos={setTodos}

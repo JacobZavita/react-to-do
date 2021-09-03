@@ -1,8 +1,8 @@
-import React from 'react'
 import Buttons from '../Buttons'
 import { VscThreeBars } from 'react-icons/vsc'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { orderBy, range } from 'lodash'
+// import CustomizedDialogue from '../Dialogue'
 
 const List = props => {
 
@@ -32,25 +32,24 @@ const List = props => {
     let reorderedList = props.filteredTodos.map((todo) => {
       if (todo.id === result.draggableId) {
         props.setTodos([...props.todos, todo.position = destination.index])
-        console.log("condition 1", todo)
+        // console.log("condition 1", todo)
         return todo
       } else if (affectedRange.includes(todo.position)) {
         if (directionOfDrag === "greater") {
           props.setTodos([...props.todos, todo.position = todo.position -1])
-          console.log("condition 2.1", todo)
+          // console.log("condition 2.1", todo)
           return todo
         } else if (directionOfDrag === "less") {
           props.setTodos([...props.todos, todo.position = todo.position+1])
-          console.log("condition 2.2", todo)
+          // console.log("condition 2.2", todo)
           return todo
         }
       } else {
-        console.log("condition 3", todo)
+        // console.log("condition 3", todo)
         return todo
       }
     })
 
-    console.log(reorderedList)
     // update list state
     props.setTodos(reorderedList)
   }
@@ -83,6 +82,9 @@ const List = props => {
                           <li className={`todo-todo ${todo.completed ? "completed" : ''}`}>
                             {todo.text}
                           </li>
+                          {/* <CustomizedDialogue 
+                            text={todo.text}
+                          /> */}
                           <Buttons
                             setTodos={props.setTodos}
                             todos={props.todos}
