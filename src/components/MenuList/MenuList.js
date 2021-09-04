@@ -53,54 +53,54 @@ function MenuList() {
       </List>
       <Divider />
       <List>
-          <ListItem button>
-            <ListItemIcon>
-              <WorkIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Work
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <AttachMoneyIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Finances
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <FitnessCenterIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Fitness
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <GroupIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Social
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <FavoriteIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Spiritual
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <WeekendIcon />
-            </ListItemIcon>
-            <ListItemText>
-              Watchlist
-            </ListItemText>
-          </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <WorkIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Work
+          </ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <AttachMoneyIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Finances
+          </ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <FitnessCenterIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Fitness
+          </ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <GroupIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Social
+          </ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <FavoriteIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Spiritual
+          </ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <WeekendIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Watchlist
+          </ListItemText>
+        </ListItem>
         </List>
     </div>
   )
