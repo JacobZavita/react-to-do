@@ -2,7 +2,7 @@ import Buttons from '../Buttons'
 import { VscThreeBars } from 'react-icons/vsc'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { orderBy, range } from 'lodash'
-// import CustomizedDialogue from '../Dialogue'
+import CustomizedDialogue from '../Dialogue'
 
 const List = props => {
 
@@ -82,9 +82,9 @@ const List = props => {
                           <li className={`todo-todo ${todo.completed ? "completed" : ''}`}>
                             {todo.text}
                           </li>
-                          {/* <CustomizedDialogue 
+                          <CustomizedDialogue 
                             text={todo.text}
-                          /> */}
+                          />
                           <Buttons
                             setTodos={props.setTodos}
                             todos={props.todos}

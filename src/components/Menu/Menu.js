@@ -10,7 +10,6 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-
 import MenuList from '../MenuList'
 
 const drawerWidth = 240;
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
-    backgroundImage: 'linear-gradient(180deg, #fda085 70%, #f6d365 100%)',
+    backgroundImage: 'linear-gradient(180deg, #23a6d5 50%, #23d5ab 100%)',
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,

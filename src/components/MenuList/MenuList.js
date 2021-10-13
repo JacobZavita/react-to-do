@@ -17,7 +17,7 @@ import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 function MenuList() {
   return (
     <div>
-      <List>
+      {/* <List>
         <ListItem button>
           <ListItemIcon>
             <InboxIcon />
@@ -51,7 +51,7 @@ function MenuList() {
           </ListItemText>
         </ListItem>
       </List>
-      <Divider />
+      <Divider /> */}
       <List>
         <ListItem button>
           <ListItemIcon>

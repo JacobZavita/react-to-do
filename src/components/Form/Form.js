@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "25vh",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: '50px'
   },
   inputText: {
     borderTopLeftRadius: '10px',
@@ -15,9 +16,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     border: 'none',
     background: 'white'
-}
- 
-
+  }
 }))
 
 const Form = props => {

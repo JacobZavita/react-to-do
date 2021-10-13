@@ -20,6 +20,7 @@ const styles = (theme) => ({
   },
 })
 
+// This is the top of the dialogue
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
@@ -34,11 +35,13 @@ const DialogTitle = withStyles(styles)((props) => {
   )
 })
 
+// This is the middle of it with the body, text field - this is where I want to add the 
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
   },
 }))(MuiDialogContent)
+
 
 const DialogActions = withStyles((theme) => ({
   root: {
@@ -86,17 +89,18 @@ export default function CustomizedDialogs(props) {
         </DialogTitle>
         <DialogContent dividers>
           <Typography>
-            {descriptions}
+            {input}
+            {/* or is it descriptions to use here? Input seems to be rendering onchange but descriptions breaks it */}
           </Typography>
-          <TextField
+          {/* <TextField
             id="outlined-multiline-static"
             label="Description"
             multiline
-            rows={4}
+            rows={2}
             placeholder="Add a more detailed description..."
             variant="outlined"
             onChange={handleChange}
-          />
+          /> */}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSetDescription} color="primary">
