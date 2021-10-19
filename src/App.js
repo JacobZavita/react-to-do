@@ -10,6 +10,14 @@ const App = () => {
   const [todos, setTodos] = useState([])
   const [status, setStatus] = useState("all")
   const [filteredTodos, setFilteredTodos] = useState([])
+  const [todoType, setTodoType] = useState({
+    work: [],
+    finances: [],
+    fitness: [],
+    social: [],
+    spiritual: [],
+    watchlist: []
+  })
 
   useEffect(() => {
     getLocalTodos()
@@ -62,6 +70,8 @@ const App = () => {
         todos={todos}
         setTodos={setTodos}
         filteredTodos={filteredTodos}
+        todoType={todoType}
+        setTodoType={setTodoType}
       />
     </div>
   )

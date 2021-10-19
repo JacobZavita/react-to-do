@@ -84,6 +84,8 @@ const List = props => {
                           </li>
                           <CustomizedDialogue 
                             text={todo.text}
+                            todoType={props.todoType}
+                            setTodoType={props.setTodoType}
                           />
                           <Buttons
                             setTodos={props.setTodos}

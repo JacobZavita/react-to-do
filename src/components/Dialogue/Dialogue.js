@@ -1,11 +1,48 @@
 import { useState } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Button, Dialog, IconButton, TextField, Typography } from '@material-ui/core'
+import { useTheme } from '@mui/material/styles';
+import { Button, Dialog, IconButton, Typography } from '@material-ui/core'
 import MuiDialogTitle from '@material-ui/core/DialogTitle'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
 import { MdClose } from 'react-icons/md'
 import { MdMoreHoriz } from 'react-icons/md'
+import Box from '@mui/material/Box';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Chip from '@mui/material/Chip';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+const names = [
+  'Work',
+  'Finances',
+  'Fitness',
+  'Social',
+  'Spiritual',
+  'Watchlist'
+];
+
+function getStyles(name, type, theme) {
+  return {
+    fontWeight:
+      type.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 const styles = (theme) => ({
   root: {
@@ -51,23 +88,24 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 export default function CustomizedDialogs(props) {
+  const theme = useTheme();
+  const [type, setType] = useState([]);
+
+  // handle selection in select
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setType(
+      // On autofill we get a the stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+    // props.setTodoType({ ...props.todoType })
+    // console.log(props.todoType)
+    console.log("thing")
+  };
+
   const [open, setOpen] = useState(false)
-  const [input, setInput] = useState('')
-  const [descriptions, setDescriptions] = useState([])
-
-  const handleSetDescription = event => {
-    event.preventDefault()
-    setDescriptions([
-      ...descriptions,
-      { text: input}
-    ])
-    setInput('')
-    console.log(descriptions)
-  }
-
-  const handleChange = ({ target }) => {
-    setInput(target.value)
-  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -88,25 +126,48 @@ export default function CustomizedDialogs(props) {
           {props.text}
         </DialogTitle>
         <DialogContent dividers>
-          <Typography>
-            {input}
-            {/* or is it descriptions to use here? Input seems to be rendering onchange but descriptions breaks it */}
-          </Typography>
-          {/* <TextField
-            id="outlined-multiline-static"
-            label="Description"
-            multiline
-            rows={2}
-            placeholder="Add a more detailed description..."
-            variant="outlined"
-            onChange={handleChange}
-          /> */}
+          <FormControl sx={{ m: 1, width: 300 }}>
+            <InputLabel id="demo-multiple-chip-label">Type</InputLabel>
+            <Select
+              labelId="demo-multiple-chip-label"
+              id="demo-multiple-chip"
+              multiple
+              value={type}
+              onChange={handleChange}
+              input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+              renderValue={(selected) => (
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                  {selected.map((value) => (
+                    <Chip
+                      key={value}
+                      label={value}
+                    />
+                  ))}
+                </Box>
+              )}
+              MenuProps={MenuProps}
+            >
+              {names.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  style={getStyles(name, type, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleSetDescription} color="primary">
+        {/* <DialogActions> */}
+          {/* <Button
+            autoFocus 
+            onClick={handleSetDescription}
+            color="primary"
+          >
             Save changes
-          </Button>
-        </DialogActions>
+          </Button> */}
+        {/* </DialogActions> */}
       </Dialog>
     </div>
   )
